@@ -10,7 +10,7 @@ Topik halaman saya adalah daftar film yang pernah saya tonton.
 - Dua bagian utama: Daftar Film dan Tambah Film
 - Kolom tabel: Judul Film, Tahun, Sutradara, Rating Saya
 - Kolom form: Judul Film, Tahun, Rating
-- Gambar: film-1.jpg
+- IMAGE : Gambar isi dari poster
 
 ## Catatan penggunaan AI
 
