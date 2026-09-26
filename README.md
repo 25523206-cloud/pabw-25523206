@@ -48,3 +48,6 @@ Kriteria selesai saya: mengubah --color-primary di satu baris pada
 tokens.css harus mengubah warna tombol, tautan, judul, dan elemen fokus
 yang menggunakan token tersebut.
 
+## catatan penggunaan AI
+
+AI digunakan untuk membantu memahami konsep design token, struktur CSS, dan memberikan saran perbaikan tampilan. Kode dan hasil akhir disesuaikan serta diperiksa kembali oleh saya.
