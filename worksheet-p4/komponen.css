@@ -1,0 +1,90 @@
+/* ========================================
+   KOMPONEN CSS — PERTEMUAN 4
+   ======================================== */
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-4);
+    background-color: var(--color-surface);
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: var(--space-2);
+    text-align: left;
+}
+
+th,
+td {
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-bg);
+}
+
+
+/* Form */
+form {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+form p {
+    display: grid;
+    gap: var(--space-2);
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-fg);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: fit-content;
+    padding: var(--space-3) var(--space-4);
+    border: 0;
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+/* Fokus keyboard */
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+
+/* Validasi form */
+input:user-invalid,
+textarea:user-invalid {
+    border-color: var(--color-danger);
+}

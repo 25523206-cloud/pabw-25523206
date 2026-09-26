@@ -7,28 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Film yang Pernah Saya Tonton</title>
+
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Film yang Pernah Saya Tonton</h1>
+        <div class="header-baris">
 
-        <nav aria-label="Navigasi utama">
-            <ul>
-                <li>
-                    <a href="#daftar-film">Daftar Film</a>
-                </li>
+            <input
+                type="checkbox"
+                id="tema"
+                class="pengalih-tema"
+            >
 
-                <li>
-                    <a href="#tambah-film">Tambah Film</a>
-                </li>
+            <label for="tema" class="tombol-tema">
+                Tema gelap
+            </label>
 
-                <li>
-                    <a href="#tentang-saya">Tentang Saya</a>
-                </li>
-            </ul>
-        </nav>
+            <h1>Film yang Pernah Saya Tonton</h1>
+
+            <nav aria-label="Navigasi utama">
+                <ul>
+                    <li>
+                        <a href="#daftar-film">Daftar Film</a>
+                    </li>
+
+                    <li>
+                        <a href="#tambah-film">Tambah Film</a>
+                    </li>
+
+                    <li>
+                        <a href="#tentang-saya">Tentang Saya</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
     <main>
@@ -83,47 +103,57 @@
 
             <h2>Poster Film</h2>
 
-            <figure>
-                <img
-                    src="image/film-1.png"
-                    alt="Poster film Bumi Manusia"
-                    width="300"
-                    height="450"
-                    loading="lazy"
-                >
+            <div class="katalog">
 
-                <figcaption>
-                    Poster film Bumi Manusia.
-                </figcaption>
-            </figure>
+                <article class="kartu">
+                    <figure>
+                        <img
+                            src="film-1.png"
+                            alt="Poster film Bumi Manusia"
+                            width="300"
+                            height="450"
+                            loading="lazy"
+                        >
 
-            <figure>
-                <img
-                    src="image/film-2.png"
-                    alt="Poster film Parasite"
-                    width="300"
-                    height="450"
-                    loading="lazy"
-                >
+                        <figcaption>
+                            Poster film Bumi Manusia.
+                        </figcaption>
+                    </figure>
+                </article>
 
-                <figcaption>
-                    Poster film Parasite.
-                </figcaption>
-            </figure>
+                <article class="kartu">
+                    <figure>
+                        <img
+                            src="film-2.png"
+                            alt="Poster film Parasite"
+                            width="300"
+                            height="450"
+                            loading="lazy"
+                        >
 
-            <figure>
-                <img
-                    src="image/film-3.png"
-                    alt="Poster film Tenggelamnya Kapal Van der Wijck"
-                    width="300"
-                    height="450"
-                    loading="lazy"
-                >
+                        <figcaption>
+                            Poster film Parasite.
+                        </figcaption>
+                    </figure>
+                </article>
 
-                <figcaption>
-                    Poster film Tenggelamnya Kapal Van der Wijck.
-                </figcaption>
-            </figure>
+                <article class="kartu">
+                    <figure>
+                        <img
+                            src="film-3.png"
+                            alt="Poster film Tenggelamnya Kapal Van der Wijck"
+                            width="300"
+                            height="450"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            Poster film Tenggelamnya Kapal Van der Wijck.
+                        </figcaption>
+                    </figure>
+                </article>
+
+            </div>
 
         </section>
 

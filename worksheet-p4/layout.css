@@ -1,0 +1,78 @@
+/* ========================================
+   LAYOUT CSS — PERTEMUAN 4
+   ======================================== */
+
+/* D.1 — Navbar dalam satu baris */
+header {
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-baris {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    gap: var(--space-4);
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* D.2 — Wadah utama dan kartu katalog */
+main {
+    width: min(100% - 2rem, 70rem);
+    margin-inline: auto;
+    padding-block: var(--space-6);
+}
+
+section {
+    margin-bottom: var(--section-gap);
+}
+
+.katalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-6);
+}
+
+.kartu {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--card-pad);
+    box-shadow: var(--shadow-1);
+}
+
+
+/* D.3 — Gambar film */
+.kartu img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+}
+
+
+/* Footer */
+footer {
+    margin-top: var(--space-6);
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
