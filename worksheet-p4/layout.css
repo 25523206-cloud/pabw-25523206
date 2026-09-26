@@ -2,7 +2,6 @@
    LAYOUT CSS — PERTEMUAN 4
    ======================================== */
 
-/* D.1 — Navbar dalam satu baris */
 header {
     padding-block: var(--space-4);
     border-bottom: 1px solid var(--color-border);
@@ -32,8 +31,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-
-/* D.2 — Wadah utama dan kartu katalog */
 main {
     width: min(100% - 2rem, 70rem);
     margin-inline: auto;
@@ -44,13 +41,16 @@ section {
     margin-bottom: var(--section-gap);
 }
 
+/* Katalog menggunakan flexbox */
 .katalog {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-6);
 }
 
 .kartu {
+    flex: 1 1 15rem;
+    min-width: 0;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -58,8 +58,6 @@ section {
     box-shadow: var(--shadow-1);
 }
 
-
-/* D.3 — Gambar film */
 .kartu img {
     width: 100%;
     aspect-ratio: 2 / 3;
@@ -68,8 +66,6 @@ section {
     margin-bottom: var(--space-4);
 }
 
-
-/* Footer */
 footer {
     margin-top: var(--space-6);
     padding-block: var(--space-4);

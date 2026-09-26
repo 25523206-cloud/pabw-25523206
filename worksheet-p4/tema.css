@@ -18,7 +18,7 @@
 }
 
 
-/* F.2 — Tombol pengalih tema */
+/* F.2 — Pengalih tema */
 .pengalih-tema {
     position: absolute;
     opacity: 0;
@@ -36,8 +36,7 @@
 }
 
 
-/* Tema gelap yang dipilih secara manual */
-/* Harus berada setelah media query */
+/* Tema gelap manual */
 :root:has(#tema:checked) {
     --color-bg: #0F172A;
     --color-fg: #E2E8F0;

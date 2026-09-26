@@ -2,7 +2,6 @@
    BASE CSS — PERTEMUAN 4
    ======================================== */
 
-/* C.1 — Reset ringan dan box-sizing */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -17,8 +16,6 @@ img {
     display: block;
 }
 
-
-/* C.2 — Tipografi */
 html {
     font-size: 100%;
 }
@@ -29,6 +26,12 @@ body {
     line-height: 1.6;
     color: var(--color-fg);
     background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-primary);
 }
 
 h1 {
@@ -57,14 +60,10 @@ small {
     font-size: var(--text-sm);
 }
 
-
-/* Warna dasar untuk tautan */
 a {
     color: var(--color-primary);
 }
 
-
-/* Form mengikuti tipografi halaman */
 button,
 input,
 select,
