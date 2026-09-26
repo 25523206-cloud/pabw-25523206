@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Film yang Pernah Saya Tonton</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Film yang Pernah Saya Tonton</h1>
+
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li>
+                    <a href="#daftar-film">Daftar Film</a>
+                </li>
+
+                <li>
+                    <a href="#tambah-film">Tambah Film</a>
+                </li>
+
+                <li>
+                    <a href="#tentang-saya">Tentang Saya</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="daftar-film">
+
+            <h2>Daftar Film</h2>
+
+            <p>
+                Berikut adalah beberapa film yang pernah saya tonton.
+            </p>
+
+            <table>
+
+                <caption>
+                    Daftar Film yang Pernah Saya Tonton
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Judul Film</th>
+                        <th scope="col">Tahun</th>
+                        <th scope="col">Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Bumi Manusia</th>
+                        <td>2019</td>
+                        <td>8/10</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Parasite</th>
+                        <td>2019</td>
+                        <td>9/10</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            Tenggelamnya Kapal Van der Wijck
+                        </th>
+                        <td>2013</td>
+                        <td>8/10</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <h2>Poster Film</h2>
+
+            <figure>
+                <img
+                    src="image/film-1.png"
+                    alt="Poster film Bumi Manusia"
+                    width="300"
+                    height="450"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    Poster film Bumi Manusia.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="image/film-2.png"
+                    alt="Poster film Parasite"
+                    width="300"
+                    height="450"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    Poster film Parasite.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="image/film-3.png"
+                    alt="Poster film Tenggelamnya Kapal Van der Wijck"
+                    width="300"
+                    height="450"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    Poster film Tenggelamnya Kapal Van der Wijck.
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <section id="tambah-film">
+
+            <h2>Tambah Film</h2>
+
+            <p>
+                Form berikut digunakan untuk memasukkan data film.
+            </p>
+
+            <form action="/simpan" method="post">
+
+                <p>
+                    <label for="judul-film">
+                        Judul Film
+                    </label>
+
+                    <input
+                        type="text"
+                        id="judul-film"
+                        name="judul-film"
+                        placeholder="Masukkan judul film"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="tahun-film">
+                        Tahun
+                    </label>
+
+                    <input
+                        type="number"
+                        id="tahun-film"
+                        name="tahun-film"
+                        placeholder="Masukkan tahun film"
+                        min="1900"
+                        max="2026"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="rating-film">
+                        Rating
+                    </label>
+
+                    <input
+                        type="number"
+                        id="rating-film"
+                        name="rating-film"
+                        min="1"
+                        max="10"
+                        step="0.1"
+                        placeholder="1 - 10"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="keterangan">
+                        Keterangan
+                    </label>
+
+                    <textarea
+                        id="keterangan"
+                        name="keterangan"
+                        rows="4"
+                        placeholder="Masukkan keterangan film"
+                    ></textarea>
+                </p>
+
+                <button type="submit">
+                    Simpan Film
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer id="tentang-saya">
+
+        <h2>Tentang Saya</h2>
+
+        <p>
+            Saya adalah mahasiswa yang memiliki ketertarikan
+            terhadap film dan membuat halaman ini sebagai bagian
+            dari tugas Pengembangan Aplikasi Berbasis Web.
+        </p>
+
+        <p>
+            NIM: 25523206
+        </p>
+
+        <p>
+            &copy; 2026
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
