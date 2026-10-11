@@ -14,7 +14,6 @@ const profil = {
     keahlian: ["HTML", "CSS", "JavaScript"]
 };
 
-// Data profil
 const namaTampilan = profil.nama ?? "Nama belum diisi";
 const prodiTampilan = profil.programStudi ?? "Program studi belum diisi";
 
@@ -26,21 +25,18 @@ console.log("Keahlian:", profil.keahlian.join(", "));
 console.log("Keahlian pertama:", profil.keahlian?.[0] ?? "Belum ada keahlian");
 console.log("Jumlah proyek:", jumlahProyek);
 
-// C.1 dan C.2 — Fungsi perkenalan
+// Lembar C — fungsi
 function buatPerkenalan({ nama, peran }) {
     return `${nama} — ${peran}`;
 }
 
-// Fungsi alternatif: expression
 const buatPerkenalanExpression = function ({ nama, peran }) {
     return `${nama} — ${peran}`;
 };
 
-// Fungsi alternatif: arrow
 const buatPerkenalanArrow = ({ nama, peran }) =>
     `${nama} — ${peran}`;
 
-// Fungsi untuk merapikan daftar keahlian
 const formatKeahlian = (daftar) => {
     if (!Array.isArray(daftar) || daftar.length === 0) {
         return "Belum ada keahlian";
@@ -49,13 +45,11 @@ const formatKeahlian = (daftar) => {
     return daftar.join(" · ");
 };
 
-// Uji fungsi perkenalan
 console.log(buatPerkenalan(profil));
 console.log(buatPerkenalanExpression(profil));
 console.log(buatPerkenalanArrow(profil));
 console.log("Keahlian:", formatKeahlian(profil.keahlian));
 
-// C.3 — Menguji fungsi dengan argumen berbeda
 console.log(
     buatPerkenalan({ nama: "Ayu", peran: "mahasiswa" })
 );
@@ -67,24 +61,78 @@ console.log(
     formatKeahlian(["HTML", "CSS", "JavaScript"])
 );
 
-// Contoh array proyek
+// Lembar D.1 — object dan array of object
+const dataProfil = {
+    nama: "Almer Dafa Maulana",
+    peran: "Mahasiswa Sistem Informasi",
+    keahlian: ["HTML", "CSS", "JavaScript"]
+};
+
 const daftarProyek = [
-    { id: 1, nama: "Website Profil", teknologi: "HTML", selesai: true },
-    { id: 2, nama: "Website Styling", teknologi: "CSS", selesai: true },
-    { id: 3, nama: "Aplikasi JavaScript", teknologi: "JavaScript", selesai: false }
+    {
+        judul: "Halaman Profil",
+        tahun: 2026,
+        selesai: true
+    },
+    {
+        judul: "Katalog Produk",
+        tahun: 2026,
+        selesai: false
+    }
 ];
 
-console.log("Semua proyek:", daftarProyek.map(proyek => proyek.nama));
-console.log(
-    "Proyek selesai:",
-    daftarProyek.filter(proyek => proyek.selesai)
+console.log("Nama profil:", dataProfil.nama);
+console.log("Proyek pertama:", daftarProyek[0]);
+console.log("Judul proyek pertama:", daftarProyek[0].judul);
+console.log("Nama melalui bracket:", dataProfil["nama"]);
+
+// Lembar D.2 — menyalin object dan array dengan benar
+const salinanProfil = { ...dataProfil };
+console.log("Salinan profil:", salinanProfil);
+
+const urutProyek = [...daftarProyek].sort(
+    (a, b) => a.judul.localeCompare(b.judul)
 );
+console.log("Proyek terurut:", urutProyek);
 
-const proyekDitemukan = daftarProyek.find(proyek => proyek.id === 2);
-console.log("Proyek ditemukan:", proyekDitemukan ?? "Proyek tidak ditemukan");
-console.log("Jumlah proyek:", [...daftarProyek].length);
+const proyekJudulA = daftarProyek.filter(
+    proyek => proyek.judul === "Halaman Profil"
+);
+console.log("Proyek Halaman Profil:", proyekJudulA);
 
-// Contoh data kosong untuk menguji nilai default
+console.log("Proyek pertama:", daftarProyek[0]);
+
+// Lembar D.3 — map, filter, find, dan reduce
+const daftarAngka = [1, 2, 3];
+
+const angkaDikaliDua = daftarAngka.map(angka => angka * 2);
+console.log("Hasil map:", angkaDikaliDua);
+
+const angkaLebihDariSatu = daftarAngka.filter(angka => angka > 1);
+console.log("Hasil filter:", angkaLebihDariSatu);
+
+const angkaDitemukan = daftarAngka.find(angka => angka === 2);
+console.log("Hasil find:", angkaDitemukan);
+
+const jumlahAngka = daftarAngka.reduce(
+    (total, angka) => total + angka,
+    0
+);
+console.log("Hasil reduce:", jumlahAngka);
+
+// Yang harus tercetak di Console — sesuai worksheet
+console.table(profil.keahlian);
+console.table(daftarProyek);
+
+const selesai = daftarProyek.filter(proyek => proyek.selesai);
+console.table(selesai);
+
+const katalog = daftarProyek.find(
+    proyek => proyek.judul === "Katalog Produk"
+);
+console.log(katalog);
+
+// Contoh data kosong
 const profilKosong = {
     nama: null,
     programStudi: "",
@@ -130,9 +178,7 @@ if (formFilm && daftarFilmBody) {
         const keterangan = inputKeterangan?.value.trim() ?? "";
 
         if (!judul || !inputTahun.value || !inputRating.value) {
-            if (pesan) {
-                pesan.textContent = "Semua data wajib harus diisi.";
-            }
+            if (pesan) pesan.textContent = "Semua data wajib harus diisi.";
             return;
         }
 
@@ -167,9 +213,7 @@ if (formFilm && daftarFilmBody) {
         baris.append(kolomJudul, kolomTahun, kolomRating);
         daftarFilmBody.appendChild(baris);
 
-        if (keterangan) {
-            kolomJudul.title = keterangan;
-        }
+        if (keterangan) kolomJudul.title = keterangan;
 
         if (pesan) {
             pesan.textContent = `Film "${judul}" berhasil ditambahkan!`;
