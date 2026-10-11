@@ -1,17 +1,15 @@
-
 const nama = "Almer Dafa Maulana";
 const nim = "25523206";
-const programStudi = "Sistem Informasi";
+const programStudi = "Informatika";
 const universitas = "Universitas Islam Indonesia";
 const jumlahProyek = 3;
 
-// Data profil
 const profil = {
     nama,
     nim,
     programStudi,
     universitas,
-    peran: "mahasiswa Sistem Informasi",
+    peran: "mahasiswa Informatika",
     keahlian: ["HTML", "CSS", "JavaScript"]
 };
 
@@ -50,36 +48,20 @@ console.log(buatPerkenalan(profil));
 console.log(buatPerkenalanExpression(profil));
 console.log(buatPerkenalanArrow(profil));
 console.log("Keahlian:", formatKeahlian(profil.keahlian));
-
-console.log(
-    buatPerkenalan({ nama: "Ayu", peran: "mahasiswa" })
-);
-console.log(
-    buatPerkenalan({ nama: "Budi", peran: "programmer" })
-);
-console.log(
-    "Keahlian contoh:",
-    formatKeahlian(["HTML", "CSS", "JavaScript"])
-);
+console.log(buatPerkenalan({ nama: "Ayu", peran: "mahasiswa" }));
+console.log(buatPerkenalan({ nama: "Budi", peran: "programmer" }));
+console.log("Keahlian contoh:", formatKeahlian(["HTML", "CSS", "JavaScript"]));
 
 // LEMBAR D.1 — OBJECT DAN ARRAY OF OBJECT
 const dataProfil = {
     nama: "Almer Dafa Maulana",
-    peran: "Mahasiswa Sistem Informasi",
+    peran: "Mahasiswa Informatika",
     keahlian: ["HTML", "CSS", "JavaScript"]
 };
 
 const daftarProyek = [
-    {
-        judul: "Halaman Profil",
-        tahun: 2026,
-        selesai: true
-    },
-    {
-        judul: "Katalog Produk",
-        tahun: 2026,
-        selesai: false
-    }
+    { judul: "Halaman Profil", tahun: 2026, selesai: true },
+    { judul: "Katalog Produk", tahun: 2026, selesai: false }
 ];
 
 console.log("Nama profil:", dataProfil.nama);
@@ -105,20 +87,13 @@ console.log("Data proyek asli:", daftarProyek);
 // LEMBAR D.3 — MAP, FILTER, FIND, REDUCE
 const daftarAngka = [1, 2, 3];
 
-const angkaDikaliDua = daftarAngka.map(angka => angka * 2);
-console.log("Hasil map:", angkaDikaliDua);
-
-const angkaLebihDariSatu = daftarAngka.filter(angka => angka > 1);
-console.log("Hasil filter:", angkaLebihDariSatu);
-
-const angkaDitemukan = daftarAngka.find(angka => angka === 2);
-console.log("Hasil find:", angkaDitemukan);
-
-const jumlahAngka = daftarAngka.reduce(
-    (total, angka) => total + angka,
-    0
+console.log("Hasil map:", daftarAngka.map(angka => angka * 2));
+console.log("Hasil filter:", daftarAngka.filter(angka => angka > 1));
+console.log("Hasil find:", daftarAngka.find(angka => angka === 2));
+console.log(
+    "Hasil reduce:",
+    daftarAngka.reduce((total, angka) => total + angka, 0)
 );
-console.log("Hasil reduce:", jumlahAngka);
 
 // OUTPUT CONSOLE SESUAI LEMBAR D
 console.table(profil.keahlian);
@@ -132,29 +107,22 @@ const katalog = daftarProyek.find(
 );
 console.log("Katalog:", katalog);
 
-// LEMBAR E — CONTOH DEBUGGING DAN PENANGANAN DATA
+// LEMBAR E — LATIHAN DEBUGGING
 console.log("Profil untuk pemeriksaan:", profil);
 console.table(daftarProyek);
 
-// E.4 — Kasus undefined
 const dataUji = {};
 console.log("Nama data uji:", dataUji.nama);
 
-// E.4 — Kasus null
 const dataNull = null;
-
-// Baris ini akan error jika dijalankan karena dataNull adalah null:
+// Baris berikut sengaja tidak dijalankan karena akan menghasilkan TypeError:
 // console.log(dataNull.nama);
-
-// Versi aman menggunakan optional chaining
 console.log("Nama data null:", dataNull?.nama);
 
-// E.4 — Nilai input yang perlu dikonversi
 const nilaiInput = "123";
 console.log("Nilai input asli:", nilaiInput);
 console.log("Nilai input angka:", Number(nilaiInput));
 
-// Contoh data kosong dan nilai default
 const profilKosong = {
     nama: null,
     programStudi: "",
@@ -200,9 +168,7 @@ if (formFilm && daftarFilmBody) {
         const keterangan = inputKeterangan?.value.trim() ?? "";
 
         if (!judul || !inputTahun.value || !inputRating.value) {
-            if (pesan) {
-                pesan.textContent = "Semua data wajib harus diisi.";
-            }
+            if (pesan) pesan.textContent = "Semua data wajib harus diisi.";
             return;
         }
 
@@ -237,17 +203,11 @@ if (formFilm && daftarFilmBody) {
         baris.append(kolomJudul, kolomTahun, kolomRating);
         daftarFilmBody.appendChild(baris);
 
-        if (keterangan) {
-            kolomJudul.title = keterangan;
-        }
-
-        if (pesan) {
-            pesan.textContent = `Film "${judul}" berhasil ditambahkan!`;
-        }
+        if (keterangan) kolomJudul.title = keterangan;
+        if (pesan) pesan.textContent = `Film "${judul}" berhasil ditambahkan!`;
 
         formFilm.reset();
     });
 }
 
 console.log("JavaScript berhasil dimuat.");
-    
