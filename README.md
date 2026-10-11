@@ -51,3 +51,28 @@ yang menggunakan token tersebut.
 ## catatan penggunaan AI
 
 AI digunakan untuk membantu memahami konsep design token, struktur CSS, dan memberikan saran perbaikan tampilan. Kode dan hasil akhir disesuaikan serta diperiksa kembali oleh saya.
+
+## Pertemuan 8 — JavaScript Dasar dan Interaksi Halaman
+
+Pada Pertemuan 8, saya melanjutkan pengembangan halaman **Film yang Pernah Saya Tonton** dengan mempelajari JavaScript dasar, pengolahan object dan array, debugging, serta penambahan interaksi pada halaman web.
+
+### Materi dan Pekerjaan yang Dikerjakan
+
+- Membuat variabel untuk menyimpan nama, NIM, program studi, universitas, dan jumlah proyek.
+- Membuat object profil yang berisi informasi diri dan daftar keahlian.
+- Menggunakan template literal, nullish coalescing (`??`), dan optional chaining (`?.`).
+- Membuat fungsi perkenalan menggunakan function declaration, function expression, dan arrow function.
+- Membuat fungsi untuk memformat daftar keahlian.
+- Mengolah object dan array of object untuk menyimpan data proyek.
+- Menyalin object dan array menggunakan spread syntax (`...`).
+- Menggunakan method `sort()`, `filter()`, `find()`, `map()`, dan `reduce()`.
+- Menggunakan `console.log()` dan `console.table()` untuk memeriksa hasil program.
+- Mempelajari debugging, termasuk penanganan nilai `null`, `undefined`, dan konversi input menggunakan `Number()`.
+- Menambahkan tombol untuk mengganti tema gelap dan terang.
+- Membuat form untuk menambahkan film ke tabel.
+- Menambahkan validasi judul film, tahun, dan rating.
+- Menampilkan pesan berhasil atau pesan kesalahan ketika form digunakan.
+
+### Catatan Penggunaan AI
+
+AI digunakan untuk membantu memahami konsep JavaScript, penggunaan function, object, array, debugging, validasi form, dan manipulasi DOM. Kode disesuaikan dengan halaman yang saya kembangkan dan diperiksa kembali melalui browser serta Console.
