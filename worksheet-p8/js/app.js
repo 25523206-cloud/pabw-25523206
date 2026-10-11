@@ -5,6 +5,7 @@ const programStudi = "Sistem Informasi";
 const universitas = "Universitas Islam Indonesia";
 const jumlahProyek = 3;
 
+// Data profil
 const profil = {
     nama,
     nim,
@@ -25,7 +26,7 @@ console.log("Keahlian:", profil.keahlian.join(", "));
 console.log("Keahlian pertama:", profil.keahlian?.[0] ?? "Belum ada keahlian");
 console.log("Jumlah proyek:", jumlahProyek);
 
-// Lembar C — fungsi
+// LEMBAR C — FUNGSI
 function buatPerkenalan({ nama, peran }) {
     return `${nama} — ${peran}`;
 }
@@ -61,7 +62,7 @@ console.log(
     formatKeahlian(["HTML", "CSS", "JavaScript"])
 );
 
-// Lembar D.1 — object dan array of object
+// LEMBAR D.1 — OBJECT DAN ARRAY OF OBJECT
 const dataProfil = {
     nama: "Almer Dafa Maulana",
     peran: "Mahasiswa Sistem Informasi",
@@ -86,7 +87,7 @@ console.log("Proyek pertama:", daftarProyek[0]);
 console.log("Judul proyek pertama:", daftarProyek[0].judul);
 console.log("Nama melalui bracket:", dataProfil["nama"]);
 
-// Lembar D.2 — menyalin object dan array dengan benar
+// LEMBAR D.2 — MENYALIN OBJECT DAN ARRAY
 const salinanProfil = { ...dataProfil };
 console.log("Salinan profil:", salinanProfil);
 
@@ -99,10 +100,9 @@ const proyekJudulA = daftarProyek.filter(
     proyek => proyek.judul === "Halaman Profil"
 );
 console.log("Proyek Halaman Profil:", proyekJudulA);
+console.log("Data proyek asli:", daftarProyek);
 
-console.log("Proyek pertama:", daftarProyek[0]);
-
-// Lembar D.3 — map, filter, find, dan reduce
+// LEMBAR D.3 — MAP, FILTER, FIND, REDUCE
 const daftarAngka = [1, 2, 3];
 
 const angkaDikaliDua = daftarAngka.map(angka => angka * 2);
@@ -120,7 +120,7 @@ const jumlahAngka = daftarAngka.reduce(
 );
 console.log("Hasil reduce:", jumlahAngka);
 
-// Yang harus tercetak di Console — sesuai worksheet
+// OUTPUT CONSOLE SESUAI LEMBAR D
 console.table(profil.keahlian);
 console.table(daftarProyek);
 
@@ -130,9 +130,31 @@ console.table(selesai);
 const katalog = daftarProyek.find(
     proyek => proyek.judul === "Katalog Produk"
 );
-console.log(katalog);
+console.log("Katalog:", katalog);
 
-// Contoh data kosong
+// LEMBAR E — CONTOH DEBUGGING DAN PENANGANAN DATA
+console.log("Profil untuk pemeriksaan:", profil);
+console.table(daftarProyek);
+
+// E.4 — Kasus undefined
+const dataUji = {};
+console.log("Nama data uji:", dataUji.nama);
+
+// E.4 — Kasus null
+const dataNull = null;
+
+// Baris ini akan error jika dijalankan karena dataNull adalah null:
+// console.log(dataNull.nama);
+
+// Versi aman menggunakan optional chaining
+console.log("Nama data null:", dataNull?.nama);
+
+// E.4 — Nilai input yang perlu dikonversi
+const nilaiInput = "123";
+console.log("Nilai input asli:", nilaiInput);
+console.log("Nilai input angka:", Number(nilaiInput));
+
+// Contoh data kosong dan nilai default
 const profilKosong = {
     nama: null,
     programStudi: "",
@@ -147,7 +169,7 @@ console.log(
 );
 console.log("Keahlian:", formatKeahlian(profilKosong.keahlian));
 
-// Tombol tema gelap/terang
+// TOMBOL TEMA GELAP/TERANG
 const tombolTema = document.getElementById("tombol-tema");
 
 if (tombolTema) {
@@ -158,7 +180,7 @@ if (tombolTema) {
     });
 }
 
-// Form tambah film
+// FORM TAMBAH FILM
 const formFilm = document.getElementById("form-film");
 const daftarFilmBody = document.getElementById("daftar-film-body");
 const pesan = document.getElementById("pesan");
@@ -178,7 +200,9 @@ if (formFilm && daftarFilmBody) {
         const keterangan = inputKeterangan?.value.trim() ?? "";
 
         if (!judul || !inputTahun.value || !inputRating.value) {
-            if (pesan) pesan.textContent = "Semua data wajib harus diisi.";
+            if (pesan) {
+                pesan.textContent = "Semua data wajib harus diisi.";
+            }
             return;
         }
 
@@ -213,7 +237,9 @@ if (formFilm && daftarFilmBody) {
         baris.append(kolomJudul, kolomTahun, kolomRating);
         daftarFilmBody.appendChild(baris);
 
-        if (keterangan) kolomJudul.title = keterangan;
+        if (keterangan) {
+            kolomJudul.title = keterangan;
+        }
 
         if (pesan) {
             pesan.textContent = `Film "${judul}" berhasil ditambahkan!`;
@@ -224,3 +250,4 @@ if (formFilm && daftarFilmBody) {
 }
 
 console.log("JavaScript berhasil dimuat.");
+    
