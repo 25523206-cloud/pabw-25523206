@@ -103,4 +103,20 @@ textarea:user-invalid {
 .kartu-film[hidden] {
     display: none;
 }
+.filter-film {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-film button.active {
+    background-color: #263d82;
+    color: white;
+    border: 2px solid #263d82;
+}
+
+.kartu-film[hidden] {
+    display: none;
+}
 }

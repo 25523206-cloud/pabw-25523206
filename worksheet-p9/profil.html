@@ -40,24 +40,52 @@
         <section id="daftar-film">
             <h2>Daftar Film Favorit</h2>
 
+            <!-- Tombol filter film -->
             <div id="filter-film" class="filter-film">
-                <button type="button" data-kategori="semua" class="active">Semua</button>
-                <button type="button" data-kategori="pertama">Film Pertama</button>
-                <button type="button" data-kategori="kedua">Film Kedua</button>
-                <button type="button" data-kategori="ketiga">Film Ketiga</button>
+                <button
+                    type="button"
+                    data-kategori="semua"
+                    class="active"
+                    aria-pressed="true">
+                    Semua
+                </button>
+
+                <button
+                    type="button"
+                    data-kategori="pertama"
+                    aria-pressed="false">
+                    Film Pertama
+                </button>
+
+                <button
+                    type="button"
+                    data-kategori="kedua"
+                    aria-pressed="false">
+                    Film Kedua
+                </button>
+
+                <button
+                    type="button"
+                    data-kategori="ketiga"
+                    aria-pressed="false">
+                    Film Ketiga
+                </button>
             </div>
 
+            <!-- Kartu film yang akan difilter -->
             <div class="katalog-film" id="katalog-film">
                 <article class="kartu-film" data-kategori="pertama">
                     <img src="film-1.png" alt="Poster film pertama">
                     <h3>Film Pertama</h3>
                     <p>Salah satu film yang pernah saya tonton.</p>
                 </article>
+
                 <article class="kartu-film" data-kategori="kedua">
                     <img src="film-2.png" alt="Poster film kedua">
                     <h3>Film Kedua</h3>
                     <p>Film yang menarik untuk ditonton.</p>
                 </article>
+
                 <article class="kartu-film" data-kategori="ketiga">
                     <img src="film-3.png" alt="Poster film ketiga">
                     <h3>Film Ketiga</h3>
@@ -100,25 +128,55 @@
 
         <section id="tambah-film">
             <h2>Tambah Film Baru</h2>
+
             <form id="form-film">
                 <div>
                     <label for="judul-film">Judul Film</label>
-                    <input type="text" id="judul-film" name="judul-film" placeholder="Masukkan judul film" required>
+                    <input
+                        type="text"
+                        id="judul-film"
+                        name="judul-film"
+                        placeholder="Masukkan judul film"
+                        required>
                 </div>
+
                 <div>
                     <label for="tahun-film">Tahun Rilis</label>
-                    <input type="number" id="tahun-film" name="tahun-film" min="1888" max="2100" placeholder="Contoh: 2025" required>
+                    <input
+                        type="number"
+                        id="tahun-film"
+                        name="tahun-film"
+                        min="1888"
+                        max="2100"
+                        placeholder="Contoh: 2025"
+                        required>
                 </div>
+
                 <div>
                     <label for="rating-film">Rating (1–10)</label>
-                    <input type="number" id="rating-film" name="rating-film" min="1" max="10" step="1" placeholder="Contoh: 8" required>
+                    <input
+                        type="number"
+                        id="rating-film"
+                        name="rating-film"
+                        min="1"
+                        max="10"
+                        step="1"
+                        placeholder="Contoh: 8"
+                        required>
                 </div>
+
                 <div>
                     <label for="keterangan">Keterangan (opsional)</label>
-                    <textarea id="keterangan" name="keterangan" rows="3" placeholder="Tulis keterangan film"></textarea>
+                    <textarea
+                        id="keterangan"
+                        name="keterangan"
+                        rows="3"
+                        placeholder="Tulis keterangan film"></textarea>
                 </div>
+
                 <button type="submit">Tambah Film</button>
             </form>
+
             <p id="pesan" role="status" aria-live="polite"></p>
         </section>
     </main>

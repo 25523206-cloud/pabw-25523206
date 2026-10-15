@@ -210,5 +210,4 @@ if (formFilm && daftarFilmBody) {
     });
 }
 
-console.log("JavaScript berhasil dimuat.");
 
