@@ -52,27 +52,35 @@ yang menggunakan token tersebut.
 
 AI digunakan untuk membantu memahami konsep design token, struktur CSS, dan memberikan saran perbaikan tampilan. Kode dan hasil akhir disesuaikan serta diperiksa kembali oleh saya.
 
-## Pertemuan 8 — JavaScript Dasar dan Interaksi Halaman
+## Pertemuan 9 — DOM, Events, dan Interaktivitas Halaman
 
-Pada Pertemuan 8, saya melanjutkan pengembangan halaman **Film yang Pernah Saya Tonton** dengan mempelajari JavaScript dasar, pengolahan object dan array, debugging, serta penambahan interaksi pada halaman web.
+Pada Pertemuan 9, saya melanjutkan pengembangan halaman **Film yang Pernah Saya Tonton** dengan mempelajari manipulasi DOM, event listener, event delegation, rendering data, serta debugging interaksi pada halaman web.
 
 ### Materi dan Pekerjaan yang Dikerjakan
 
-- Membuat variabel untuk menyimpan nama, NIM, program studi, universitas, dan jumlah proyek.
-- Membuat object profil yang berisi informasi diri dan daftar keahlian.
-- Menggunakan template literal, nullish coalescing (`??`), dan optional chaining (`?.`).
-- Membuat fungsi perkenalan menggunakan function declaration, function expression, dan arrow function.
-- Membuat fungsi untuk memformat daftar keahlian.
-- Mengolah object dan array of object untuk menyimpan data proyek.
-- Menyalin object dan array menggunakan spread syntax (`...`).
-- Menggunakan method `sort()`, `filter()`, `find()`, `map()`, dan `reduce()`.
-- Menggunakan `console.log()` dan `console.table()` untuk memeriksa hasil program.
-- Mempelajari debugging, termasuk penanganan nilai `null`, `undefined`, dan konversi input menggunakan `Number()`.
-- Menambahkan tombol untuk mengganti tema gelap dan terang.
-- Membuat form untuk menambahkan film ke tabel.
-- Menambahkan validasi judul film, tahun, dan rating.
-- Menampilkan pesan berhasil atau pesan kesalahan ketika form digunakan.
+- Menggunakan `querySelector()` untuk memilih elemen HTML berdasarkan selector.
+- Menggunakan `querySelectorAll()` untuk memilih beberapa elemen HTML sekaligus.
+- Menggunakan `Array.from()` untuk mengubah NodeList menjadi array.
+- Membuat elemen HTML menggunakan `createElement()`.
+- Menggunakan `textContent` untuk menampilkan teks pada elemen secara aman.
+- Menggunakan `append()` untuk menambahkan elemen ke dalam container.
+- Menggunakan `replaceChildren()` untuk mengosongkan atau mengganti isi container sebelum rendering.
+- Menggunakan `classList.toggle()` untuk menambahkan atau menghapus class CSS.
+- Menggunakan `addEventListener()` untuk menangani interaksi pengguna.
+- Mempelajari event delegation agar satu listener pada elemen parent dapat menangani event dari elemen anak.
+- Menggunakan `event.target.closest()` untuk menemukan elemen terdekat yang sesuai dengan selector.
+- Menggunakan `preventDefault()` untuk mencegah perilaku bawaan browser ketika diperlukan.
+- Mempelajari `dataset` untuk membaca nilai dari atribut `data-*` pada elemen HTML.
+- Menguji tombol filter film untuk menampilkan daftar film sesuai kategori.
+- Menggunakan browser Console untuk memeriksa hasil interaksi dan membantu proses debugging.
+
+### Hasil Pengujian
+
+- Tombol filter **Semua** menampilkan tiga film.
+- Setiap tombol filter film menampilkan satu film sesuai kategorinya.
+- Poster film ditampilkan pada halaman.
+- Hasil interaksi diperiksa melalui browser dan Console.
 
 ### Catatan Penggunaan AI
 
-AI digunakan untuk membantu memahami konsep JavaScript, penggunaan function, object, array, debugging, validasi form, dan manipulasi DOM. Kode disesuaikan dengan halaman yang saya kembangkan dan diperiksa kembali melalui browser serta Console.
+AI digunakan untuk membantu memahami konsep DOM, pemilihan elemen HTML, rendering data, event listener, event delegation, dan debugging. Kode disesuaikan dengan halaman yang saya kembangkan dan diperiksa kembali melalui browser serta Console.
