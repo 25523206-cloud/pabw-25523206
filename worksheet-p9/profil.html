@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film yang Pernah Saya Tonton</title>
+
+    <link rel="icon" href="film-1.png" type="image/png">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+</head>
+<body>
+    <header>
+        <div class="header-baris">
+            <h1>Film yang Pernah Saya Tonton</h1>
+            <nav>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#daftar-film">Daftar Film</a></li>
+                    <li><a href="#data-film">Data Film</a></li>
+                    <li><a href="#tambah-film">Tambah Film</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="tombol-tema" aria-pressed="false">
+                Tema Gelap
+            </button>
+        </div>
+    </header>
+
+    <main id="beranda">
+        <section>
+            <h2>Selamat Datang</h2>
+            <p>Ini adalah halaman pribadi saya untuk mencatat film yang pernah saya tonton.</p>
+            <p>Nama: Almer Dafa Maulana</p>
+            <p>NIM: 25523206</p>
+            <p>Program Studi: Informatika</p>
+            <p>Universitas Islam Indonesia</p>
+        </section>
+
+        <section id="daftar-film">
+            <h2>Daftar Film Favorit</h2>
+            <div class="katalog-film">
+                <article class="kartu-film">
+                    <img src="film-1.png" alt="Poster film pertama">
+                    <h3>Film Pertama</h3>
+                    <p>Salah satu film yang pernah saya tonton.</p>
+                </article>
+                <article class="kartu-film">
+                    <img src="film-2.png" alt="Poster film kedua">
+                    <h3>Film Kedua</h3>
+                    <p>Film yang menarik untuk ditonton.</p>
+                </article>
+                <article class="kartu-film">
+                    <img src="film-3.png" alt="Poster film ketiga">
+                    <h3>Film Ketiga</h3>
+                    <p>Film lain yang masuk daftar tontonan saya.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="data-film">
+            <h2>Data Film</h2>
+            <div class="tabel-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Judul Film</th>
+                            <th scope="col">Tahun</th>
+                            <th scope="col">Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daftar-film-body">
+                        <tr>
+                            <th scope="row">Film Pertama</th>
+                            <td>2023</td>
+                            <td>8/10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Film Kedua</th>
+                            <td>2024</td>
+                            <td>9/10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Film Ketiga</th>
+                            <td>2025</td>
+                            <td>7/10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="tambah-film">
+            <h2>Tambah Film Baru</h2>
+            <form id="form-film">
+                <div>
+                    <label for="judul-film">Judul Film</label>
+                    <input
+                        type="text"
+                        id="judul-film"
+                        name="judul-film"
+                        placeholder="Masukkan judul film"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="tahun-film">Tahun Rilis</label>
+                    <input
+                        type="number"
+                        id="tahun-film"
+                        name="tahun-film"
+                        min="1888"
+                        max="2100"
+                        placeholder="Contoh: 2025"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="rating-film">Rating (1–10)</label>
+                    <input
+                        type="number"
+                        id="rating-film"
+                        name="rating-film"
+                        min="1"
+                        max="10"
+                        step="1"
+                        placeholder="Contoh: 8"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="keterangan">Keterangan (opsional)</label>
+                    <textarea
+                        id="keterangan"
+                        name="keterangan"
+                        rows="3"
+                        placeholder="Tulis keterangan film"
+                    ></textarea>
+                </div>
+
+                <button type="submit">Tambah Film</button>
+            </form>
+
+            <p id="pesan" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Halaman Film Saya</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dom.js"></script>
+</body>
+</html>
