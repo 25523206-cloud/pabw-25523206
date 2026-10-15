@@ -2,34 +2,80 @@ const tombolTema = document.querySelector("#tombol-tema");
 const daftarFilmBody = document.querySelector("#daftar-film-body");
 const formFilm = document.querySelector("#form-film");
 const pesan = document.querySelector("#pesan");
+const katalogFilm = document.querySelector(".katalog-film");
 
 const inputJudul = document.querySelector("#judul-film");
 const inputTahun = document.querySelector("#tahun-film");
 const inputRating = document.querySelector("#rating-film");
 const inputKeterangan = document.querySelector("#keterangan");
 
-console.log("Tombol tema:", tombolTema);
-console.log("Daftar film:", daftarFilmBody);
-console.log("Form film:", formFilm);
-console.log("Pesan:", pesan);
+const daftarFilm = [
+    {
+        judul: "Film Pertama",
+        deskripsi: "Salah satu film yang pernah saya tonton.",
+        gambar: "film-1.png",
+        alt: "Poster film pertama"
+    },
+    {
+        judul: "Film Kedua",
+        deskripsi: "Film yang menarik untuk ditonton.",
+        gambar: "film-2.png",
+        alt: "Poster film kedua"
+    },
+    {
+        judul: "Film Ketiga",
+        deskripsi: "Film lain yang masuk daftar tontonan saya.",
+        gambar: "film-3.png",
+        alt: "Poster film ketiga"
+    }
+];
 
-console.table([
-    { elemen: "Tombol tema", ditemukan: tombolTema !== null },
-    { elemen: "Daftar film", ditemukan: daftarFilmBody !== null },
-    { elemen: "Form film", ditemukan: formFilm !== null },
-    { elemen: "Pesan", ditemukan: pesan !== null },
-    { elemen: "Input judul", ditemukan: inputJudul !== null },
-    { elemen: "Input tahun", ditemukan: inputTahun !== null },
-    { elemen: "Input rating", ditemukan: inputRating !== null },
-    { elemen: "Input keterangan", ditemukan: inputKeterangan !== null }
-]);
+const daftarProyek = [
+    {
+        judul: "Halaman Profil",
+        deskripsi: "Membuat halaman profil menggunakan HTML, CSS, dan JavaScript."
+    },
+    {
+        judul: "Katalog Produk",
+        deskripsi: "Menampilkan daftar produk dalam bentuk kartu."
+    }
+];
 
-if (tombolTema) {
-    tombolTema.addEventListener("click", () => {
-        const aktif = document.body.classList.toggle("tema-gelap");
-        tombolTema.textContent = aktif ? "Tema Terang" : "Tema Gelap";
-        tombolTema.setAttribute("aria-pressed", String(aktif));
+function buatKartuFilm(film) {
+    const kartu = document.createElement("article");
+    kartu.className = "kartu-film";
+
+    const gambar = document.createElement("img");
+    gambar.src = film.gambar;
+    gambar.alt = film.alt;
+
+    const judul = document.createElement("h3");
+    judul.textContent = film.judul;
+
+    const deskripsi = document.createElement("p");
+    deskripsi.textContent = film.deskripsi;
+
+    kartu.append(gambar, judul, deskripsi);
+
+    return kartu;
+}
+
+function tampilkanKartuFilm() {
+    if (!katalogFilm) return;
+
+    katalogFilm.replaceChildren();
+
+    const fragment = document.createDocumentFragment();
+
+    daftarFilm.forEach((film) => {
+        fragment.append(buatKartuFilm(film));
     });
+
+    katalogFilm.append(fragment);
+}
+
+function tampilkanProyek() {
+    console.table(daftarProyek);
 }
 
 function periksaDaftarFilm() {
@@ -49,7 +95,13 @@ function periksaDaftarFilm() {
     }
 }
 
-periksaDaftarFilm();
+if (tombolTema) {
+    tombolTema.addEventListener("click", () => {
+        const aktif = document.body.classList.toggle("tema-gelap");
+        tombolTema.textContent = aktif ? "Tema Terang" : "Tema Gelap";
+        tombolTema.setAttribute("aria-pressed", String(aktif));
+    });
+}
 
 if (formFilm && daftarFilmBody) {
     formFilm.addEventListener("submit", (event) => {
@@ -92,7 +144,7 @@ if (formFilm && daftarFilmBody) {
         if (keterangan) kolomJudul.title = keterangan;
 
         baris.append(kolomJudul, kolomTahun, kolomRating);
-        daftarFilmBody.appendChild(baris);
+        daftarFilmBody.append(baris);
 
         periksaDaftarFilm();
 
@@ -108,5 +160,9 @@ if (formFilm && daftarFilmBody) {
         });
     });
 }
+
+tampilkanKartuFilm();
+tampilkanProyek();
+periksaDaftarFilm();
 
 console.log("dom.js berhasil dimuat.");
