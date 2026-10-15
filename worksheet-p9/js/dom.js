@@ -2,7 +2,8 @@ const tombolTema = document.querySelector("#tombol-tema");
 const daftarFilmBody = document.querySelector("#daftar-film-body");
 const formFilm = document.querySelector("#form-film");
 const pesan = document.querySelector("#pesan");
-const katalogFilm = document.querySelector(".katalog-film");
+const katalogFilm = document.querySelector("#katalog-film");
+const filterFilm = document.querySelector("#filter-film");
 
 const inputJudul = document.querySelector("#judul-film");
 const inputTahun = document.querySelector("#tahun-film");
@@ -14,19 +15,22 @@ const daftarFilm = [
         judul: "Film Pertama",
         deskripsi: "Salah satu film yang pernah saya tonton.",
         gambar: "film-1.png",
-        alt: "Poster film pertama"
+        alt: "Poster film pertama",
+        kategori: "pertama"
     },
     {
         judul: "Film Kedua",
         deskripsi: "Film yang menarik untuk ditonton.",
         gambar: "film-2.png",
-        alt: "Poster film kedua"
+        alt: "Poster film kedua",
+        kategori: "kedua"
     },
     {
         judul: "Film Ketiga",
         deskripsi: "Film lain yang masuk daftar tontonan saya.",
         gambar: "film-3.png",
-        alt: "Poster film ketiga"
+        alt: "Poster film ketiga",
+        kategori: "ketiga"
     }
 ];
 
@@ -44,6 +48,7 @@ const daftarProyek = [
 function buatKartuFilm(film) {
     const kartu = document.createElement("article");
     kartu.className = "kartu-film";
+    kartu.dataset.kategori = film.kategori;
 
     const gambar = document.createElement("img");
     gambar.src = film.gambar;
@@ -63,15 +68,52 @@ function buatKartuFilm(film) {
 function tampilkanKartuFilm() {
     if (!katalogFilm) return;
 
-    katalogFilm.replaceChildren();
-
     const fragment = document.createDocumentFragment();
 
     daftarFilm.forEach((film) => {
         fragment.append(buatKartuFilm(film));
     });
 
-    katalogFilm.append(fragment);
+    katalogFilm.replaceChildren(fragment);
+}
+
+function tandaiFilterAktif(tombolAktif) {
+    if (!filterFilm) return;
+
+    filterFilm.querySelectorAll("button").forEach((tombol) => {
+        const aktif = tombol === tombolAktif;
+        tombol.classList.toggle("active", aktif);
+        tombol.setAttribute("aria-pressed", String(aktif));
+    });
+}
+
+function terapkanFilter(kategori) {
+    if (!katalogFilm) return;
+
+    katalogFilm.querySelectorAll(".kartu-film").forEach((kartu) => {
+        kartu.hidden = kategori !== "semua" && kartu.dataset.kategori !== kategori;
+    });
+}
+
+if (filterFilm) {
+    filterFilm.addEventListener("click", (event) => {
+        const tombol = event.target.closest("button");
+
+        if (!tombol || !filterFilm.contains(tombol)) return;
+
+        const kategori = tombol.dataset.kategori;
+
+        if (!kategori) return;
+
+        tandaiFilterAktif(tombol);
+        terapkanFilter(kategori);
+    });
+
+    const tombolAwal = filterFilm.querySelector('[data-kategori="semua"]');
+
+    if (tombolAwal) {
+        tandaiFilterAktif(tombolAwal);
+    }
 }
 
 function tampilkanProyek() {
