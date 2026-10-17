@@ -1,7 +1,7 @@
 
 const URL = 'https://jsonplaceholder.typicode.com/posts';
 
-async function load() {
+export async function fetchNews() {
     try {
         const response = await fetch(URL);
 
@@ -20,7 +20,6 @@ async function load() {
         return data;
     } catch (error) {
         console.error('Gagal mengambil data:', error.message);
+        throw error;
     }
 }
-
-load();
