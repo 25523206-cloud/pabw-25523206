@@ -1,3 +1,5 @@
+import { fetchNews } from './api.js';
+
 const nama = "Almer Dafa Maulana";
 const nim = "25523206";
 const programStudi = "Informatika";
@@ -189,5 +191,49 @@ if (formFilm && daftarFilmBody) {
         formFilm.reset();
     });
 }
+
+const container = document.querySelector('#list');
+
+function render(list) {
+    if (!container) return;
+
+    container.textContent = '';
+
+    list.forEach(function (n) {
+        const card = document.createElement('article');
+        const heading = document.createElement('h3');
+
+        heading.textContent = n.title ?? 'Judul tidak tersedia';
+
+        card.appendChild(heading);
+        container.appendChild(card);
+    });
+}
+
+async function loadPosts() {
+    if (!container) return;
+
+    container.textContent = 'Loading...';
+
+    try {
+        const data = await fetchNews();
+
+        if (!Array.isArray(data)) {
+            throw new Error('Format data API tidak valid.');
+        }
+
+        if (data.length === 0) {
+            container.textContent = 'No posts available.';
+            return;
+        }
+
+        render(data);
+    } catch (error) {
+        container.textContent = 'Gagal memuat data.';
+        console.error('Terjadi kesalahan:', error.message);
+    }
+}
+
+loadPosts();
 
 console.log("JavaScript berhasil dimuat.");
