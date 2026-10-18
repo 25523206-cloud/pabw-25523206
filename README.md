@@ -1,4 +1,4 @@
-# PABW — Almer Daffa Maulana - 25523206
+# PABW — Almer Dafa Maulana - 25523206
 
 ## Pertemuan 3 — Halaman Profil Saya
 
@@ -84,3 +84,38 @@ Pada Pertemuan 9, saya melanjutkan pengembangan halaman **Film yang Pernah Saya 
 ### Catatan Penggunaan AI
 
 AI digunakan untuk membantu memahami konsep DOM, pemilihan elemen HTML, rendering data, event listener, event delegation, dan debugging. Kode disesuaikan dengan halaman yang saya kembangkan dan diperiksa kembali melalui browser serta Console.
+
+## Pertemuan 10 — Asynchronous JavaScript: fetch, Promise, and JSON
+
+Pada Pertemuan 10, saya mempelajari JavaScript asynchronous, penggunaan fetch(), Promise, dan JSON untuk mengambil serta mengolah data dari API. Materi ini diterapkan pada proyek halaman web Film yang Pernah Saya Tonton.
+
+### Materi dan Pekerjaan yang Dikerjakan
+
+Menggunakan git statusfetch() untuk mengambil data dari API.
+Menggunakan async dan await untuk menjalankan proses asynchronous.
+Menggunakan Promise untuk memahami proses pengambilan data yang membutuhkan waktu.
+Menggunakan response.status untuk melihat status respons HTTP.
+Menggunakan response.ok untuk memeriksa keberhasilan permintaan.
+Menggunakan response.json() untuk mengubah respons API menjadi data JavaScript.
+Menggunakan JSON.stringify() untuk mengubah objek JavaScript menjadi teks JSON.
+Menggunakan try dan catch untuk menangani kesalahan ketika pengambilan data gagal.
+Menggunakan console.log() dan console.error() untuk memeriksa hasil pengujian melalui Console browser.
+Implementasi API
+
+Saya menggunakan API berikut untuk mengambil data postingan:
+
+https://jsonplaceholder.typicode.com/posts
+
+Fungsi fetchNews() dibuat pada berkas api.js. Fungsi ini mengambil data menggunakan fetch(), memeriksa status respons, mengubah respons menjadi JSON, dan mengembalikan data yang berhasil diperoleh. Jika terjadi kesalahan, fungsi menampilkan pesan melalui Console dan meneruskan kesalahan tersebut.
+
+### Hasil Pengujian
+
+Permintaan API berhasil ketika respons menunjukkan status HTTP 200.
+Data API berhasil diubah menjadi data JavaScript menggunakan response.json().
+Data postingan dan judul postingan pertama dapat diperiksa melalui Console.
+Objek JavaScript berhasil diubah menjadi teks JSON menggunakan JSON.stringify().
+Kesalahan permintaan API dapat ditangani menggunakan try dan catch.
+
+### Catatan Penggunaan AI
+
+AI digunakan untuk membantu memahami konsep asynchronous JavaScript, penggunaan fetch(), Promise, JSON, serta penanganan kesalahan API. Kode disesuaikan dengan proyek yang saya kembangkan dan hasilnya diperiksa kembali melalui browser serta Console.
